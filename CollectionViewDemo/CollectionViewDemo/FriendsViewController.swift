@@ -11,6 +11,7 @@ import UIKit
 class FriendsViewController: UIViewController {
     
     var collectionView: UICollectionView!
+    var collectionViewDelegate = FriendsCollectionViewDelegate()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,5 +26,9 @@ class FriendsViewController: UIViewController {
     
     func configureCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.dataSource = collectionViewDelegate
+        collectionView.delegate = collectionViewDelegate
+        
+        view.addSubview(collectionView)
     }
 }
