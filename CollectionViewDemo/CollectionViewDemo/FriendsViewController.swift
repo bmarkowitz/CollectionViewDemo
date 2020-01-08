@@ -25,7 +25,14 @@ class FriendsViewController: UIViewController {
     }
     
     func configureCollectionView() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
+        let flowLayout = ColumnFlowLayout()
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: flowLayout)
+        collectionView.backgroundColor = .systemBackground
+        
+        let friendOne = Friend(name: "John")
+        let friendTwo = Friend(name: "Jane")
+        
+        collectionViewDelegate.friends = [friendOne, friendTwo]
         collectionView.dataSource = collectionViewDelegate
         collectionView.delegate = collectionViewDelegate
         collectionView.register(FriendCell.self, forCellWithReuseIdentifier: FriendCell.identifier)

@@ -24,6 +24,8 @@ class FriendLabel: UILabel {
         self.text = text
         self.font = style
         
+        translatesAutoresizingMaskIntoConstraints = false
+        
         configure()
     }
     

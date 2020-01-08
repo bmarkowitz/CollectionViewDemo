@@ -16,6 +16,8 @@ class FriendCell: UICollectionViewCell {
     var subtitleLabel: FriendLabel!
     
     func configure(with imageName: String, name: String, updatedText: String) {
+        backgroundColor = .systemGroupedBackground
+        layer.cornerRadius = 15
         configureImageView(with: imageName)
         configureTitleLabel(with: name)
         configureSubtitleLabel(with: updatedText)
@@ -24,14 +26,15 @@ class FriendCell: UICollectionViewCell {
     
     func configureImageView(with imageName: String) {
         avatarImageView = UIImageView(image: UIImage(named: imageName))
-        avatarImageView.layer.cornerRadius = 5
+        avatarImageView.layer.cornerRadius = 10
+        avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(avatarImageView)
         
         NSLayoutConstraint.activate([
-            avatarImageView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
-            avatarImageView.heightAnchor.constraint(equalToConstant: 20),
-            avatarImageView.widthAnchor.constraint(equalToConstant: 20)
+            avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            avatarImageView.heightAnchor.constraint(equalToConstant: 100),
+            avatarImageView.widthAnchor.constraint(equalToConstant: 100)
         ])
     }
     
@@ -40,7 +43,7 @@ class FriendCell: UICollectionViewCell {
         addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
             titleLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
             titleLabel.heightAnchor.constraint(equalToConstant: 20),
             titleLabel.widthAnchor.constraint(equalToConstant: 100)

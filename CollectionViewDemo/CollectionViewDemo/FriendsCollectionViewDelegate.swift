@@ -17,7 +17,11 @@ class FriendsCollectionViewDelegate: NSObject, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: FriendCell.identifier, for: indexPath) as! FriendCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FriendCell.identifier, for: indexPath) as! FriendCell
+        
+        let friend = friends[indexPath.row]
+        
+        cell.configure(with: "avatar", name: friend.name, updatedText: "Updated January 1, 2020")
         
         return cell
     }
