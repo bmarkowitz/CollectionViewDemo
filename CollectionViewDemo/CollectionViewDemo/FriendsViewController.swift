@@ -28,6 +28,7 @@ class FriendsViewController: UIViewController {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.dataSource = collectionViewDelegate
         collectionView.delegate = collectionViewDelegate
+        collectionView.register(FriendCell.self, forCellWithReuseIdentifier: FriendCell.identifier)
         
         view.addSubview(collectionView)
     }
