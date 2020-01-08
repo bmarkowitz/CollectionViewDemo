@@ -26,15 +26,16 @@ class FriendCell: UICollectionViewCell {
     
     func configureImageView(with imageName: String) {
         avatarImageView = UIImageView(image: UIImage(named: imageName))
+        avatarImageView.layer.masksToBounds = true
         avatarImageView.layer.cornerRadius = 10
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(avatarImageView)
         
         NSLayoutConstraint.activate([
-            avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
-            avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            avatarImageView.heightAnchor.constraint(equalToConstant: 100),
-            avatarImageView.widthAnchor.constraint(equalToConstant: 100)
+            avatarImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 7.5),
+            avatarImageView.heightAnchor.constraint(equalToConstant: 55),
+            avatarImageView.widthAnchor.constraint(equalToConstant: 55)
         ])
     }
     
@@ -43,7 +44,7 @@ class FriendCell: UICollectionViewCell {
         addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 7.5),
             titleLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
             titleLabel.heightAnchor.constraint(equalToConstant: 20),
             titleLabel.widthAnchor.constraint(equalToConstant: 100)
@@ -58,7 +59,7 @@ class FriendCell: UICollectionViewCell {
             subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
             subtitleLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
             subtitleLabel.heightAnchor.constraint(equalToConstant: 20),
-            subtitleLabel.widthAnchor.constraint(equalToConstant: 100)
+            subtitleLabel.widthAnchor.constraint(equalToConstant: 175)
         ])
     }
 }
