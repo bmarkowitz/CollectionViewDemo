@@ -26,7 +26,7 @@ class FriendCell: UICollectionViewCell {
     
     func configure() {
         layer.cornerRadius = 15
-        backgroundColor = .systemGroupedBackground
+        backgroundColor = .secondarySystemGroupedBackground
         configureImageView()
         configureTitleLabel()
         configureSubtitleLabel()
@@ -37,7 +37,6 @@ class FriendCell: UICollectionViewCell {
         avatarImageView.image = UIImage(named: imageName)
         titleLabel.text = name
         subtitleLabel.text = updatedText
-        
     }
     
     func configureImageView() {

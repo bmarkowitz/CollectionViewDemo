@@ -27,7 +27,7 @@ class FriendsViewController: UIViewController {
     func configureCollectionView() {
         let flowLayout = ColumnFlowLayout()
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: flowLayout)
-        collectionView.backgroundColor = .systemBackground
+        collectionView.backgroundColor = .systemGroupedBackground
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.alwaysBounceVertical = true
         
