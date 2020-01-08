@@ -9,11 +9,21 @@
 import UIKit
 
 class FriendsViewController: UIViewController {
+    
+    var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureViewController()
+        configureCollectionView()
+    }
+    
+    func configureViewController() {
         title = "Friends"
         view.backgroundColor = .systemBackground
+    }
+    
+    func configureCollectionView() {
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
     }
 }
