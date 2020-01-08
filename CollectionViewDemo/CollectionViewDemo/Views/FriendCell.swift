@@ -26,6 +26,7 @@ class FriendCell: UICollectionViewCell {
     
     func configure() {
         layer.cornerRadius = 15
+        layer.cornerCurve = .continuous
         backgroundColor = .secondarySystemGroupedBackground
         configureImageView()
         configureTitleLabel()
