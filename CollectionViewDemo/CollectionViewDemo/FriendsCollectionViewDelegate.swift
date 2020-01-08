@@ -21,7 +21,8 @@ class FriendsCollectionViewDelegate: NSObject, UICollectionViewDelegate, UIColle
         
         let friend = friends[indexPath.row]
         
-        cell.configure(with: "avatar", name: friend.name, updatedText: "Updated January 1, 2020")
+        cell.set(with: "avatar", name: friend.name, updatedText: "Updated January 1, 2020")
+        //cell.backgroundColor = .systemGroupedBackground
         
         return cell
     }

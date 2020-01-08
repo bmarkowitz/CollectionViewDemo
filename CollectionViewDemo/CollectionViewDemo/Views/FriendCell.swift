@@ -11,21 +11,36 @@ import UIKit
 class FriendCell: UICollectionViewCell {
     static let identifier = "FriendCell"
     
-    var avatarImageView: UIImageView!
-    var titleLabel: FriendLabel!
-    var subtitleLabel: FriendLabel!
+    var avatarImageView = UIImageView(frame: .zero)
+    var titleLabel = FriendLabel(textAlignment: .left, with: .preferredFont(forTextStyle: .headline))
+    var subtitleLabel = FriendLabel(textAlignment: .left, with: .preferredFont(forTextStyle: .subheadline))
     
-    func configure(with imageName: String, name: String, updatedText: String) {
-        backgroundColor = .systemGroupedBackground
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configure()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure() {
         layer.cornerRadius = 15
-        configureImageView(with: imageName)
-        configureTitleLabel(with: name)
-        configureSubtitleLabel(with: updatedText)
+        backgroundColor = .systemGroupedBackground
+        configureImageView()
+        configureTitleLabel()
+        configureSubtitleLabel()
         
     }
     
-    func configureImageView(with imageName: String) {
-        avatarImageView = UIImageView(image: UIImage(named: imageName))
+    func set(with imageName: String, name: String, updatedText: String) {
+        avatarImageView.image = UIImage(named: imageName)
+        titleLabel.text = name
+        subtitleLabel.text = updatedText
+        
+    }
+    
+    func configureImageView() {
         avatarImageView.layer.masksToBounds = true
         avatarImageView.layer.cornerRadius = 10
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -39,8 +54,7 @@ class FriendCell: UICollectionViewCell {
         ])
     }
     
-    func configureTitleLabel(with text: String) {
-        titleLabel = FriendLabel(text: text, with: .preferredFont(forTextStyle: .headline))
+    func configureTitleLabel() {
         addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
@@ -51,8 +65,7 @@ class FriendCell: UICollectionViewCell {
         ])
     }
     
-    func configureSubtitleLabel(with text: String) {
-        subtitleLabel = FriendLabel(text: text, with: .preferredFont(forTextStyle: .subheadline))
+    func configureSubtitleLabel() {
         addSubview(subtitleLabel)
         
         NSLayoutConstraint.activate([

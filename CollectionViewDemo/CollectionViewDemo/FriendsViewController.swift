@@ -29,6 +29,7 @@ class FriendsViewController: UIViewController {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: flowLayout)
         collectionView.backgroundColor = .systemBackground
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.alwaysBounceVertical = true
         
         let friendOne = Friend(name: "John")
         let friendTwo = Friend(name: "Jane")

@@ -19,9 +19,8 @@ class FriendLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(text: String, with style: UIFont) {
+    init(textAlignment: NSTextAlignment, with style: UIFont) {
         super.init(frame: .zero)
-        self.text = text
         self.font = style
         
         translatesAutoresizingMaskIntoConstraints = false

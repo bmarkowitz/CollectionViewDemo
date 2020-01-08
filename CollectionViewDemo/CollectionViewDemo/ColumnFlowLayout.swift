@@ -18,5 +18,4 @@ class ColumnFlowLayout: UICollectionViewFlowLayout {
         self.sectionInset = UIEdgeInsets(top: minimumInteritemSpacing, left: 0, bottom: 0, right: 0)
         self.sectionInsetReference = .fromSafeArea
     }
-
 }
