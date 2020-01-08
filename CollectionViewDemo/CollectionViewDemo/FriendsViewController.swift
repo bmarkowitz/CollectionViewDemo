@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FriendsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        title = "Friends"
+        view.backgroundColor = .systemBackground
     }
-
-
 }
-
